@@ -3,7 +3,7 @@
 This is essentially an Apache Directory Server (ApacheDS) with some Active Directory (AD) specific attributes added to make it feel like AD ; done primarily for testing purposes.  
 
 #### References
-* embedded ApacheDS from github.com/intoolswetrust/ldap-server 
+* embedded ApacheDS from https://github.com/intoolswetrust/ldap-server 
 * http://stackoverflow.com/questions/11174835/add-memberof-attribute-to-apacheds
 * The work to add memberOf attribute in ApacheDS is tracked here https://issues.apache.org/jira/browse/DIRSERVER-1844
  
@@ -13,8 +13,8 @@ This is essentially an Apache Directory Server (ApacheDS) with some Active Direc
 A `Makefile` is provided for convenience, though a part of me considers it abusing Makefiles.
 
 1. Run `make help` to see various supported commands.
-2. For the uninitiated, `make build` builds the image as `adtest:1.0.0` and `make run` runs it.
-3. `make runssl` starts the TLS listener as well. 
+2. For the uninitiated, `make docker [img=<img> tag=<tag>]` builds the image as `<img>:<tag>` (default `rkoul/adldap-docker:1.0.0dev`) and `make run [img=<img> tag=<tag>]` runs it.
+3. `make runssl [img=<img> tag=<tag>]` starts the TLS listener as well. 
 
 you may want to check out the help menu for more details
 
@@ -25,16 +25,16 @@ you may want to check out the help menu for more details
 you can run it with the default data and config
 
 ```
-   docker run -it --rm -p 127.0.0.1:10389:10389  rkoul/adldap-docker:1.0.0
+   docker run -it --rm -p 127.0.0.1:10389:10389  rkoul/adldap-docker:1.0.1
 ```
-Or pass your own users/groups ldif file via a bind mount 
+Or pass your own users/groups ldif file via a bind mount (see attributes in `data/records.ldif`)
 
 ```
 	docker run -v /tmp/data:/ldap/data \
 	    -e LDAP_USER_LDIF=myusers.ldif \
 		-e LDAP_ADMIN_PASSWORD=secret \
 		-e LDAP_DEBUG=true \
-		-it --rm -p 127.0.0.1:10389:10389  rkoul/adldap-docker:1.0.0
+		-it --rm -p 127.0.0.1:10389:10389  rkoul/adldap-docker:1.0.1 
 
 ```
 For LDAPS, you can add a java keystore file in the mounted dir. (see `make keystore`)
@@ -46,21 +46,21 @@ For LDAPS, you can add a java keystore file in the mounted dir. (see `make keyst
 		-e LDAP_KEYSTORE=mykeystore.jks \
 		-e LDAP_KEYSTORE_PASSWORD=mypass \
 		-e LDAP_DEBUG=true \
-		-it --rm -p 127.0.0.1:10636:10636 rkoul/adldap-docker:1.0.0
+		-it --rm -p 127.0.0.1:10636:10636 rkoul/adldap-docker:1.0.1
 ```
 
 #### Local Build
 if you make changes, you can clone this repo and build a new version as under:
 
 ```
-docker build -t adldap:1.0.0 .
+docker build -t adldap:0.0.1 .
 
 ```
 
 ### Sample dataset
 
 * default LDAP admin bind credentials are `uid=admin,ou=system` and whatever is passed as `LDAP_ADMIN_PASSWORD`
-* the rest of the sample data is in `data/records.ldif`  (the schema gets created via `extensions.ldif`)
+* the rest of the sample data is in `data/records.ldif`  (the schema gets created via `extensions.ldif` which you can completely replace with another bind mount on `:/ldap/extensions.ldif`)
 * user basedn = `ou=users,dc=example,dc=com`
 * groups basedn = `ou=groups,dc=example,dc=com`
 * user password = `secret`

@@ -32,8 +32,8 @@ then
     echo "No file ${user_ldif_path} found"
     exit 1
 else
-    rm ${CONTAINER_DATA_DIR}/combined.ldif 2>/dev/null
-    cat /ldap/extensions.ldif ${user_ldif_path} > ${CONTAINER_DATA_DIR}/combined.ldif 
+    # this is not strictly necessary as ldap-server.jar can take multiple ldifs 
+    cat /ldap/extensions.ldif ${user_ldif_path} > /tmp/combined.ldif 
 fi
 
 ssl_string=""
@@ -58,14 +58,14 @@ then
 fi
 
 now=$(date '+%Y%m%d%H%M%S.0Z')
-sed -i.bak 's/%TOKEN%/'${now}'/g' /ldap/data/combined.ldif
-rm /ldap/data/combined.ldif.bak 2>/dev/null
+sed -i.bak 's/%TOKEN%/'${now}'/g' /tmp/combined.ldif
 
+# TODO replace passing combined.ldif with passing /ldap/extensions.ldif + any other ldifs found in the bind mount
 exec java ${dopts} -jar \
     /ldap/ldap-server.jar \
     --admin-password "${LDAP_ADMIN_PASSWORD}" \
     --bind  "${LDAP_BIND_ADDRESS}" \
-    --port  "${LDAP_BIND_PORT}" ${ssl_string} /ldap/data/combined.ldif "$@"
+    --port  "${LDAP_BIND_PORT}" ${ssl_string} /tmp/combined.ldif "$@"
 
 
 

@@ -1,3 +1,4 @@
+# Domain
 dn: dc=example,dc=com
 dc: example
 objectClass: top
@@ -33,6 +34,7 @@ mail: adminuser@example.local
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: FYQLPhw93Eicr3l5ZQqdcg==
 
 dn: cn=testuser,ou=users,dc=example,dc=com
 distinguishedName: cn=testuser,ou=users,dc=example,dc=com
@@ -55,6 +57,7 @@ mail: testuser@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: iXCu8c0UIEGcR25HssUrQQ==
 
 dn: cn=rohit,ou=users,dc=example,dc=com
 distinguishedName: cn=rohit,ou=users,dc=example,dc=com
@@ -79,6 +82,7 @@ mail: rohit.koul@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: tzd5DPebr0KeC/0poMI5jg==
 
 dn: cn=richard,ou=users,dc=example,dc=com
 distinguishedName: cn=richard,ou=users,dc=example,dc=com
@@ -102,6 +106,7 @@ mail: richard.hendricks@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: UktWbXbZdkCnceGDOenX2Q==
 
 dn: cn=gilfoyle,ou=users,dc=example,dc=com
 distinguishedName: cn=gilfoyle,ou=users,dc=example,dc=com
@@ -124,6 +129,7 @@ mail: bertram.gilfoyle@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: ua36ou07NEGfvfwHfFVrxw==
 
 dn: cn=erlich,ou=users,dc=example,dc=com
 distinguishedName: cn=erlich,ou=users,dc=example,dc=com
@@ -147,6 +153,7 @@ mail: erlich.bachman@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: dAt6XvXT40SKdaD3fHMvUA==
 
 dn: cn=jianyang,ou=users,dc=example,dc=com
 distinguishedName: cn=jianyang,ou=users,dc=example,dc=com
@@ -169,6 +176,7 @@ mail: jian.yang@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: W0JZ9oy+BEiWjuvLFvWHuw==
 
 dn: cn=gavin,ou=users,dc=example,dc=com
 distinguishedName: cn=gavin,ou=users,dc=example,dc=com
@@ -191,6 +199,7 @@ mail: gavin.belson@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: rjDL+Lkp7E6uZGeyfnqLVA==
 
 dn: cn=russ,ou=users,dc=example,dc=com
 distinguishedName: cn=russ,ou=users,dc=example,dc=com
@@ -213,6 +222,7 @@ mail: russ.hanneman@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: d8cVpN0AykSk85kZh/ZaZw==
 
 dn: cn=bighead,ou=users,dc=example,dc=com
 distinguishedName: cn=bighead,ou=users,dc=example,dc=com
@@ -235,6 +245,7 @@ mail: nelson.bighetti@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: 2pgYEiOkuEWYCiqun7UkdQ==
 
 dn: cn=jared,ou=users,dc=example,dc=com
 distinguishedName: cn=jared,ou=users,dc=example,dc=com
@@ -258,6 +269,7 @@ mail: donald.dunn@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: mBFhIudr9kuFJKO4GNNnjw==
 
 dn: cn=dinesh,ou=users,dc=example,dc=com
 distinguishedName: cn=dinesh,ou=users,dc=example,dc=com
@@ -280,6 +292,7 @@ mail: dinesh.chugtai@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: VjXYOK3E5E6mKFjN4fQYXA==
 
 dn: cn=monica,ou=users,dc=example,dc=com
 distinguishedName: cn=monica,ou=users,dc=example,dc=com
@@ -302,6 +315,7 @@ mail: monica.hall@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: NZ4S4Toppk+AyE+ACz1lvw==
 
 dn: cn=laurie,ou=users,dc=example,dc=com
 distinguishedName: cn=laurie,ou=users,dc=example,dc=com
@@ -324,6 +338,7 @@ mail: laurie.bream@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: 5Fj8d8E9REOAeOFu2Iq9sA==
 
 dn: cn=anton,ou=users,dc=example,dc=com
 distinguishedName: cn=anton,ou=users,dc=example,dc=com
@@ -345,6 +360,7 @@ mail: anton.server@example.com
 pwdLastSet: -1
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: IBDfPz2V906mA7S0azEo2A==
 
 #
 # Groups
@@ -367,6 +383,7 @@ instanceType: 4
 member: cn=adminuser,ou=users,dc=example,dc=com
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: CuLn4pyOEUCkmGVI3kRGqQ==
 
 dn: cn=testers,ou=groups,dc=example,dc=com
 distinguishedName: cn=testers,ou=groups,dc=example,dc=com
@@ -380,6 +397,7 @@ instanceType: 4
 member: cn=testuser,ou=users,dc=example,dc=com
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: I2/18RHUxkOB74l9pixpTA==
 
 dn: cn=threecommaclub,ou=groups,dc=example,dc=com
 distinguishedName: cn=threecommaclub,ou=groups,dc=example,dc=com
@@ -394,6 +412,7 @@ member: cn=russ,ou=users,dc=example,dc=com
 member: cn=rohit,ou=users,dc=example,dc=com
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: b2izQVLCcEa7WguHp0p5ZA==
 
 dn: cn=hooli,ou=groups,dc=example,dc=com
 distinguishedName: cn=hooli,ou=groups,dc=example,dc=com
@@ -409,6 +428,7 @@ member: cn=jared,ou=users,dc=example,dc=com
 member: cn=bighead,ou=users,dc=example,dc=com
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: FF0eBQe4rUGNWY+0dzud/w==
 
 dn: cn=piedpiper,ou=groups,dc=example,dc=com
 distinguishedName: cn=piedpiper,ou=groups,dc=example,dc=com
@@ -428,6 +448,7 @@ member: cn=jared,ou=users,dc=example,dc=com
 member: cn=dinesh,ou=users,dc=example,dc=com
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: CYKXRvY720G093gvVeStxA==
 
 dn: cn=trinity,ou=groups,dc=example,dc=com
 distinguishedName: cn=trinity,ou=groups,dc=example,dc=com
@@ -442,6 +463,7 @@ member: cn=rohit,ou=users,dc=example,dc=com
 member: cn=richard,ou=users,dc=example,dc=com
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: 2XpOfcxS4U2vOd+LDsNWBQ==
 
 dn: cn=aviato,ou=groups,dc=example,dc=com
 distinguishedName: cn=aviato,ou=groups,dc=example,dc=com
@@ -455,6 +477,7 @@ instanceType: 4
 member: cn=erlich,ou=users,dc=example,dc=com
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: 2yg9Z/jngkqZA2EPif1VdQ==
 
 dn: cn=raviga,ou=groups,dc=example,dc=com
 distinguishedName: cn=raviga,ou=groups,dc=example,dc=com
@@ -469,3 +492,4 @@ member: cn=laurie,ou=users,dc=example,dc=com
 member: cn=monica,ou=users,dc=example,dc=com
 whenCreated: %TOKEN%
 whenChanged: %TOKEN%
+objectGUID:: Cffp3jDag0SX6SGTWvcNwA==

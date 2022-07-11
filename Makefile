@@ -36,7 +36,8 @@ make keystorelist [keystore=/ks][storepass=sp] List keystore at path /ks
 make clean                   Clean all 'Exited' containers'
 endef
 
-tag:=1.0.0
+img=rkoul/adldap-docker
+tag:=1.0.0dev
 name:=troll-ad-server
 
 dname=adldap.example.com
@@ -61,7 +62,7 @@ build: docker
 
 # make docker tag=1.0
 docker:
-	docker build -t adldap:${tag} .
+	docker build -t ${img}:${tag} .
 
 # make run opts=-d name=foobar mount=/tmp/data 
 run: 
@@ -69,7 +70,7 @@ run:
 		-e LDAP_USER_LDIF=${ldif} \
 		-e LDAP_ADMIN_PASSWORD=${ap} \
 		-e LDAP_DEBUG=${debug} \
-		-it --rm -p ${addr}:${port}:10389  adldap:${tag} ${cmd}
+		-it --rm -p ${addr}:${port}:10389  ${img}:${tag} ${cmd}
 
 runssl: 
 	docker run ${opts} --name=${name} -v ${mount}:/ldap/data \
@@ -78,7 +79,7 @@ runssl:
 		-e LDAP_KEYSTORE=${ks} \
 		-e LDAP_KEYSTORE_PASSWORD=${ksp} \
 		-e LDAP_DEBUG=${debug} \
-		-it --rm -p ${addr}:${sslport}:10636 adldap:${tag} ${cmd}
+		-it --rm -p ${addr}:${sslport}:10636 ${img}:${tag} ${cmd}
 
 stop:
 	@- docker rm -f ${name} 2>/dev/null
