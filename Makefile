@@ -33,6 +33,8 @@ make keystore [keystore=/ks] Create a keystore file at path /ks for ssl run
 
 make keystorelist [keystore=/ks][storepass=sp] List keystore at path /ks
 
+make getcert      [keystore=/ks][storepass=sp] Extract cert from keystore into server.pem
+
 make clean                   Clean all 'Exited' containers'
 endef
 
@@ -91,6 +93,8 @@ keystore:
 keystorelist:
 	keytool -list -v -keystore ${keystore} -storepass ${storepass}
 
+getcert:
+	keytool -export -alias adldap -keystore ${keystore} -storepass ${storepass} -rfc -file server.pem
 # Remove Exited containers
 clean:
 	docker ps -a | grep 'Exited' | awk -F " " '{print $$1}' | xargs -I {} docker rm {}
