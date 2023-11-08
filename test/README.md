@@ -16,7 +16,7 @@ While `Apache Directory Studio` and `jXplorer` are good, I find the browser base
 
 ```
 
-LDAP_STR="ldap://172.17.0.2:10636"
+LDAP_STR="ldap://172.17.0.2:10389"
 
 docker run -p 8080:80 \
     -e LDAP_URL=${LDAP_STR} \
